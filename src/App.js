@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import logo from './logo.svg';
 import './App.css';
-
+import 'antd/dist/antd.css';
 function App() {
     useEffect(()=>{
         fetch('/users')
         .then(res => res.json())
-        .then(users => console.log('---',users));
+        .then(users => console.log('---',users ));
     })
   return (
     <div className="App">
