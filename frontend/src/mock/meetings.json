@@ -1,0 +1,86 @@
+{
+  "teams": [
+    {
+      "key": "MTP",
+      "text": "MTP"
+    },
+    {
+      "key": "CPA",
+      "text": "CPA"
+    },
+    {
+      "key": "CPT",
+      "text": "CPT"
+    },
+    {
+      "key": "JP",
+      "text": "JP"
+    },
+    {
+      "key": "JPNew",
+      "text": "JPNew"
+    },
+    {
+      "key": "JAN Change",
+      "text": "JAN Change"
+    },
+    {
+      "key": "JAN Run",
+      "text": "JAN Run"
+    },
+    {
+      "key": "MRO",
+      "text": "MRO"
+    },
+    {
+      "key": "RMO All",
+      "text": "RMO All"
+    },
+    {
+      "key": "RMO dev",
+      "text": "RMO dev"
+    },
+    {
+      "key": "RMO An",
+      "text": "RMO An"
+    },
+    {
+      "key": "BAP",
+      "text": "BAP"
+    },
+    {
+      "key": "SSD",
+      "text": "ССД"
+    },
+    {
+      "key": "JPM",
+      "text": "JPM"
+    },
+    {
+      "key": "CDA",
+      "text": "CDA"
+    }
+  ],
+  "meetings": [
+    {
+      "key": "daily",
+      "text": "Ежедневный скрам"
+    },
+    {
+      "key": "demo",
+      "text": "Обзор спринта"
+    },
+    {
+      "key": "grooming",
+      "text": "Груминг"
+    },
+    {
+      "key": "planning",
+      "text": "Планирование"
+    },
+    {
+      "key": "retro",
+      "text": "Ретроспектива"
+    }
+  ]
+}

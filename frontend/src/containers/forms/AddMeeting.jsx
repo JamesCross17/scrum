@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {
     Button,
     Col,
@@ -30,23 +30,21 @@ const tailLayout = {
     },
 }
 
-const AddMeeting = () => {
+const AddMeeting = ({ onClose,meetings }) => {
     const [form] = Form.useForm()
 
     const onFinish = values => {
         console.log(values)
+        onClose()
     }
 
     const onReset = () => {
         form.resetFields()
     }
-    const [estimationValue, setEstimationValue] = useState(0)
-    const estimationChange = value => {
-        setEstimationValue(value)
-    }
     const onMeetingChange = () => {
         form.resetFields(['checklist'])
     }
+    console.log('---',meetings);
     return (
 
       <Form {...layout} form={form} name="control-hooks"
@@ -67,11 +65,7 @@ const AddMeeting = () => {
                         onChange={onMeetingChange}
                         allowClear
                       >
-                          <Option value="daily">Ежедневный скрам</Option>
-                          <Option value="demo">Обзор спринта</Option>
-                          <Option value="grooming">Груминг</Option>
-                          <Option value="planning">Планирование</Option>
-                          <Option value="retro">Ретроспектива</Option>
+                          {meetings.meetings.map(({key,text},index)=><Option value={key} key={index}>{text}</Option>)}
                       </Select>
                   </Form.Item>
                   <Form.Item
@@ -87,25 +81,7 @@ const AddMeeting = () => {
                         placeholder="Выберите команду"
                         allowClear
                       >
-                          <Option value="MTP">MTP</Option>
-                          <Option value="CPA">CPA</Option>
-                          <Option value="CPT">CPT</Option>
-                          <Option value="JP">JP</Option>
-                          <Option value="JPNew">JPNew</Option>
-                          <Option value="JAN Change">JAN
-                              Change</Option>
-                          <Option value="JAN Run">JAN
-                              Run</Option>
-                          <Option value="MRO">MRO</Option>
-                          <Option value="RMO All">RMO
-                              All</Option>
-                          <Option value="RMO dev">RMO
-                              dev</Option>
-                          <Option value="RMO An">RMO An</Option>
-                          <Option value="BAP">BAP</Option>
-                          <Option value="SSD">ССД</Option>
-                          <Option value="JPM">JPM</Option>
-                          <Option value="CDA">CDA</Option>
+                          {meetings.teams.map(({key,text},index)=><Option value={key} key={index}>{text}</Option>)}
                       </Select>
                   </Form.Item>
                   <Form.Item
@@ -171,7 +147,6 @@ const AddMeeting = () => {
                        </Radio.Group>*/}
                       <Slider
                         step={25}
-                        value={estimationValue}
                         marks={{
                             0: 'E',
                             25: 'D',

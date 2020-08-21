@@ -1,0 +1,8 @@
+language: node_js
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: 9d4b8f3381d94b156364e614e206d43e5c5a6e93  # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master

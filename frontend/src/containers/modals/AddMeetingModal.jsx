@@ -1,28 +1,26 @@
 import React, { useState } from 'react'
 import { Button, Modal } from 'antd'
 import AddMeeting from '../forms/AddMeeting'
-
+import meetings from "../../mock/meetings.json"
 const AddMeetingModal = () => {
-    const [visible, setVisible] = useState(true)
+    const [visible, setVisible] = useState(false)
     const showModal = () => setVisible(true)
-    const handleCancel = e => {
-        console.log('---', e)
+    const handleCancel = () => {
         setVisible(false)
     }
     return (
       <>
           <Button type="primary" onClick={showModal}>
-              Open Modal
+              Добавить митинг
           </Button>
           <Modal
             title="Добавить митинг"
             visible={visible}
             width={1200}
-            // onOk={this.handleOk}
-            // onCancel={this.handleCancel}
             footer={null}
+            onCancel={handleCancel}
           >
-              <AddMeeting/>
+              <AddMeeting onClose={handleCancel} meetings={meetings}/>
           </Modal>
       </>
     )
