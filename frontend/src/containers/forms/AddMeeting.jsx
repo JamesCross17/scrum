@@ -44,6 +44,9 @@ const AddMeeting = () => {
     const estimationChange = value => {
         setEstimationValue(value)
     }
+    const onMeetingChange = () => {
+        form.resetFields(['checklist'])
+    }
     return (
 
       <Form {...layout} form={form} name="control-hooks"
@@ -61,7 +64,7 @@ const AddMeeting = () => {
                   >
                       <Select
                         placeholder="Выберите митинг"
-                        // onChange={onMeetingChange}
+                        onChange={onMeetingChange}
                         allowClear
                       >
                           <Option value="daily">Ежедневный скрам</Option>
