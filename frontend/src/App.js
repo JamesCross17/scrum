@@ -3,7 +3,7 @@ import './App.css'
 import { Layout } from 'antd'
 import AddMeetingModal from './containers/modals/AddMeetingModal'
 
-const { Header, Footer, Sider, Content } = Layout
+const { Header, Content } = Layout
 
 function App () {
     return (

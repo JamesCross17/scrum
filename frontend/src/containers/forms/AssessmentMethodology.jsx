@@ -202,6 +202,8 @@ const AssessmentMethodology = ({ meeting }) => {
                         </Form.Item>
                     </Col>
                 </Row>
+            default:
+                return null
         }
     }
     return (
