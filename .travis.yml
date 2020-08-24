@@ -14,8 +14,8 @@ script:
   - echo 'Build starts!!'
   - echo 'Installing Deps!'
   - yarn
-  - echo 'Testing!'
-  - yarn test
+#  - echo 'Testing!'
+#  - yarn test
   - yarn build
 
 deploy:
