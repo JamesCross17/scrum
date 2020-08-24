@@ -17,13 +17,13 @@ script:
 #  - echo 'Testing!'
 #  - yarn test
   - yarn build
-  - git add build/
+#  - git add build/
 
 deploy:
   provider: pages
   cleanup: true
   token: $GH_TOKEN
-  local_dir: .
+  local_dir: ./
   #  target-branch: stage
   on:
     branch: master
