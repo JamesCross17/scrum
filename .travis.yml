@@ -22,7 +22,7 @@ deploy:
   provider: pages
   cleanup: true
   token: $GH_TOKEN
-  local_dir: build
+  local_dir: ./build
   #  target-branch: stage
   on:
     branch: master
