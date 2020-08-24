@@ -21,7 +21,7 @@ script:
 deploy:
   provider: pages
   cleanup: true
-  deploy_key: $GH_TOKEN
+  token: $GH_TOKEN
 #  local_dir: build
   #  target-branch: stage
   on:
