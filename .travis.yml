@@ -17,6 +17,7 @@ script:
 #  - echo 'Testing!'
 #  - yarn test
   - yarn build
+  - git add build/
 
 deploy:
   provider: pages
