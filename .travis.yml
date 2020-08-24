@@ -18,12 +18,11 @@ script:
 #  - echo 'Testing!'
 #  - yarn test
   - yarn build
-  - git add build/
 
 deploy:
   provider: pages
 #  local_dir: .
-  cleanup: true
+  cleanup: false
   token: $GH_TOKEN
   keep_history: true
   deployment_file: true
