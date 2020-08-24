@@ -26,5 +26,5 @@ deploy:
   token: $GH_TOKEN
   keep_history: true
   deployment_file: true
-  on:
-    branch: master
+#  on:
+#    branch: master
