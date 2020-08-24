@@ -20,9 +20,9 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: true
-  github_token: $GH_TOKEN
-  local-dir: build
+  cleanup: true
+  token: $GH_TOKEN
+  local_dir: build
   #  target-branch: stage
   on:
     branch: master
