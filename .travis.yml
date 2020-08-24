@@ -19,10 +19,10 @@ script:
   - yarn build
 
 deploy:
-  provider: pages
+  provider: pages:git
   cleanup: true
-  token: $GH_TOKEN
-  local_dir: build
+  deploy_key: $GH_TOKEN
+#  local_dir: build
   #  target-branch: stage
   on:
     branch: master
