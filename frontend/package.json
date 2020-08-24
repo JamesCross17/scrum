@@ -21,6 +21,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "homepage": "https://jamescross17.github.io/scrum/",
   "browserslist": {
     "production": [
       ">0.2%",
