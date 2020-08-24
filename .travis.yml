@@ -19,7 +19,7 @@ script:
   - yarn build
 
 deploy:
-  provider: pages:git
+  provider: pages
   cleanup: true
   deploy_key: $GH_TOKEN
 #  local_dir: build
