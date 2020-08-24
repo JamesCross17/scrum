@@ -14,7 +14,7 @@ const AddMeetingModal = () => {
               Добавить митинг
           </Button>
           <Modal
-            title="Добавить митинг"
+            title="Добавить митинг1"
             visible={visible}
             width={1200}
             footer={null}
