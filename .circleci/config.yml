@@ -1,3 +1,5 @@
+orbs:
+  yarn: 'itinerisltd/yarn:x.y'
 version: 2.1
 jobs:
   build:
@@ -6,13 +8,9 @@ jobs:
     steps:
       - checkout
       - run: echo "this is the build job"
-  test:
-    docker:
-      - image: circleci/<language>:<version TAG>
-    steps:
-      - checkout
-      - run: echo "this is the test job"
-#        command: curl -o- -L https://yarnpkg.com/install.sh | bash -s
+      - run:
+          name: yarn --version
+          command: yarn --version
 
 # Orchestrate our job run sequence
 workflows:
