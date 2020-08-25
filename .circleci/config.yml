@@ -1,28 +1,48 @@
 version: 2.1
-
-# Define the jobs we want to run for this project
 jobs:
   build:
     docker:
       - image: cimg/base:2020.01
     steps:
       - checkout
-      command:  curl -o- -L https://yarnpkg.com/install.sh | bash -s  | export PATH="$HOME/.yarn/bin:$PATH"
-      - cd frontend
-      - echo 'Build starts!!'
-      - echo 'Installing Deps!'
-      - yarn
-      - yarn build
-#  test:
-#    docker:
-#      - image: circleci/<language>:<version TAG>
-#    steps:
-#      - checkout
-#      - run: echo "this is the test job"
+      - run: echo "this is the build job"
+  test:
+    docker:
+      - image: circleci/<language>:<version TAG>
+    steps:
+      - checkout
+      - run: echo "this is the test job"
+        command: curl -o- -L https://yarnpkg.com/install.sh | bash -s
 
 # Orchestrate our job run sequence
 workflows:
   build_and_test:
     jobs:
       - build
-#      - test
+
+## Define the jobs we want to run for this project
+#jobs:
+#  build:
+#    docker:
+#      - image: cimg/base:2020.01
+#    steps:
+#      - checkout
+#      command:  curl -o- -L https://yarnpkg.com/install.sh | bash -s  | export PATH="$HOME/.yarn/bin:$PATH"
+#      - cd frontend
+#      - echo 'Build starts!!'
+#      - echo 'Installing Deps!'
+#      - yarn
+#      - yarn build
+##  test:
+##    docker:
+##      - image: circleci/<language>:<version TAG>
+##    steps:
+##      - checkout
+##      - run: echo "this is the test job"
+#
+## Orchestrate our job run sequence
+#workflows:
+#  build_and_test:
+#    jobs:
+#      - build
+##      - test
