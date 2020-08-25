@@ -13,6 +13,7 @@ import TextArea from 'antd/es/input/TextArea'
 import AssessmentMethodology from './AssessmentMethodology'
 import 'moment/locale/ru'
 import locale from 'antd/es/date-picker/locale/ru_RU'
+import moment from 'moment'
 
 const { Option } = Select
 const layout = {
@@ -104,7 +105,7 @@ const AddMeeting = ({ onClose,meetings }) => {
                         },
                     ]}
                   >
-                      <DatePicker locale={locale} format={'DD.MM.YYYY'}/>
+                      <DatePicker locale={locale} format={'DD.MM.YYYY'} defaultValue={moment()}/>
                   </Form.Item>
                   <Form.Item
                     name="comment"
