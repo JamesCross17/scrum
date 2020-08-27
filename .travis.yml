@@ -27,4 +27,4 @@ deploy:
   keep_history: true
   deployment_file: true
   on:
-    branch: gh-pages
+    branch: master
