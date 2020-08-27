@@ -22,7 +22,7 @@ script:
 
 deploy:
   provider: pages
-  local_dir: ./frontend
+  local_dir: ./frontend/build
 #  cleanup: true
   token: $GH_TOKEN
   keep_history: true
