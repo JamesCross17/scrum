@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'antd/dist/antd.css';
+import ru from 'antd/es/locale/ru_RU';
+import { ConfigProvider } from 'antd'
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+      <ConfigProvider locale={ru}>
+      <App />
+      </ConfigProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

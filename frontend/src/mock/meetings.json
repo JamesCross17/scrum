@@ -93,12 +93,20 @@
       "estimation": "50"
     },
     {
-      "team": "MTP",
+      "team": "JP",
       "meeting": "Ретроспектива",
       "sprint": "54",
       "date": "24.08.2020",
       "comment": "comment",
       "estimation": "50"
+    },
+    {
+      "team": "RMO",
+      "meeting": "Груминг",
+      "sprint": "42",
+      "date": "24.08.2020",
+      "comment": "comment",
+      "estimation": "0"
     }
   ]
 }

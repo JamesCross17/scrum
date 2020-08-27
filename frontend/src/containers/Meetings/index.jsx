@@ -1,19 +1,30 @@
 import React from 'react'
-import { Button, Layout, Table } from 'antd'
-import { data } from '../../mock/meetings.json'
+import { Button, Layout, Table, Tag } from 'antd'
+import { data, meetings, teams } from '../../mock/meetings.json'
 import { EditOutlined } from '@ant-design/icons'
 
-const Meetings = (props) => {
+const Meetings = () => {
+    const filterTeams = teams.map(({ key, text }) => ({ text, value: key }))
+    const filterMeetings = meetings.map(
+      ({ key, text }) => ({ text, value: key }))
     const columns = [
         {
             title: 'Команда',
             dataIndex: 'team',
             key: 'team',
+            filters: filterTeams,
+            onFilter: (value, record) => record.team.indexOf(value) === 0,
         },
         {
             title: 'Митинг',
             dataIndex: 'meeting',
             key: 'meeting',
+            filters: filterMeetings,
+            onFilter: (value, record) => {
+                const isFinded = meetings.find(
+                  ({ text }) => text === record.meeting)
+                return isFinded.key === value
+            },
         },
         {
             title: 'Спринт',
@@ -24,11 +35,42 @@ const Meetings = (props) => {
             title: 'Дата',
             dataIndex: 'date',
             key: 'date',
+            sorter: true,
         },
         {
             title: 'Комментарий',
             dataIndex: 'comment',
             key: 'comment',
+        },
+        {
+            title: 'Оценка',
+            dataIndex: 'estimation',
+            key: 'estimation',
+            render: estimation => {
+                let color = 'black'
+                let estimationText = ''
+                if (estimation === '0') {
+                    color = 'red'
+                    estimationText = 'E'
+                } else if (estimation === '25') {
+                    color = 'volcano'
+                    estimationText = 'D'
+                } else if (estimation === '50') {
+                    color = 'orange'
+                    estimationText = 'C'
+                } else if (estimation === '75') {
+                    color = 'lime'
+                    estimationText = 'B'
+                } else if (estimation === '100') {
+                    color = 'green'
+                    estimationText = 'A'
+                }
+                return (
+                  <Tag color={color} key={estimation}>
+                      {estimationText.toUpperCase()}
+                  </Tag>
+                )
+            },
         },
         {
             title: '',
@@ -41,29 +83,12 @@ const Meetings = (props) => {
     ]
     return (
       <Layout>
-          {/*  <List
-           itemLayout="horizontal"
-           bordered
-           dataSource={data}
-           renderItem={({ team, meeting, sprint, date, comment }) => (
-           <List.Item>
-           <Row gutter={[16, 16]}>
-           <Col>{team}</Col>
-           <Col>{meeting}</Col>
-           <Col>№{sprint}</Col>
-           <Col>{date}</Col>
-           <Col>{comment}</Col>
-           <Col><Button><EditOutlined/></Button></Col>
-           </Row>
-           </List.Item>
-           )}
-           />*/}
           <Table
             dataSource={data}
             columns={columns}
             onRow={(record, rowIndex) => {
                 return {
-                    onClick: event => {console.log('onRow', record)}, //
+                    onClick: () => {console.log('onRow', record)}, //
                 }
             }
             }
