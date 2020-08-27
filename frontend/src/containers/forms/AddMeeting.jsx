@@ -139,13 +139,6 @@ const AddMeeting = ({ onClose,meetings }) => {
                         },
                     ]}
                   >
-                      {/*  <Radio.Group>
-                       <Radio value="e">E</Radio>
-                       <Radio value="d">D</Radio>
-                       <Radio value="c">C</Radio>
-                       <Radio value="b">B</Radio>
-                       <Radio value="a">A</Radio>
-                       </Radio.Group>*/}
                       <Slider
                         step={25}
                         marks={{

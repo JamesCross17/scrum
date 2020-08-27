@@ -6,11 +6,24 @@ import { Menu } from 'antd'
 //     Route,
 //     Link
 // } from "react-router-dom";
-const HeaderMenu = (props) => {
+const HeaderMenu = () => {
+    // const [current, setCurrent] = useState('scrum')
+    // const handleClick = e => {
+    //     console.log('click ', e)
+    //     setCurrent(e.key)
+    // }
     return (
-      <Menu theme={'dark'} mode="horizontal">
-          <Menu.Item>Скрам-рамка</Menu.Item>
-          <Menu.Item>Командные термометры</Menu.Item>
+      <Menu
+        // onClick={handleClick}
+        //  selectedKeys={[current]}
+        defaultSelectedKeys={['scrum']}
+        theme={'dark'}
+        mode="horizontal
+
+            ">
+          <Menu.Item key="scrum">Скрам-рамка</Menu.Item>
+          <Menu.Item key="termometrs">Командные
+              термометры</Menu.Item>
       </Menu>
     )
 }
